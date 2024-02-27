@@ -1,3 +1,3 @@
 #New README
 
-This is the Introduction content.
+This is the introduction content.
