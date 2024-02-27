@@ -7,7 +7,7 @@ namespace AndrewAI.Data
     {
         protected override void OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=codezen1.database.windows.net;Initial Catalog=AndrewAI;Persist Security Info=True;user id=test;password=Test@456;Integrated Security=false;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=true;");
+            optionsBuilder.UseSqlServer("Data Source=codezen1.database.windows.net;Initial Catalog=AndrewAI;Persist Security Info=True;user id=test;password=AndrewAI@789;Integrated Security=false;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
