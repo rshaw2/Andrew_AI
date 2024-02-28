@@ -202,5 +202,15 @@ namespace AndrewAI.Controllers
             rng.GetBytes(randomNumber);
             return Convert.ToBase64String(randomNumber);
         }
+
+        [HttpGet]
+        [Route("myip")]
+        public IActionResult GetMyIp()
+        {
+            var hostName = Dns.GetHostName();
+            var myIps = Dns.GetHostEntry(hostName).AddressList;
+            var myIp = Dns.GetHostEntry(hostName).AddressList[0].ToString();
+            return Ok(new { hostName, myIp});
+        }
     }
 }
