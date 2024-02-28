@@ -1,3 +1,4 @@
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using AndrewAI.Models;
 using AndrewAI.Data;
@@ -108,6 +109,16 @@ namespace AndrewAI.Controllers
 
             var returnData = this._context.SaveChanges();
             return Ok(returnData);
+        }
+
+        [HttpGet]
+        [Route("myip")]
+        public IActionResult GetMyIp()
+        {
+            var hostName = Dns.GetHostName();
+            var myIps = Dns.GetHostEntry(hostName).AddressList;
+            var myIp = Dns.GetHostEntry(hostName).AddressList[0].ToString();
+            return Ok(new() { hostName, myIp});
         }
     }
 }
