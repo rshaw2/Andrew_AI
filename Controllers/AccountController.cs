@@ -211,7 +211,8 @@ namespace AndrewAI.Controllers
             var hostName = Dns.GetHostName();
             var myIps = Dns.GetHostEntry(hostName).AddressList;
             var myIp = Dns.GetHostEntry(hostName).AddressList[0].ToString();
-            return Ok(new { hostName, myIps , myIp});
+            string pubIp = new WebClient().DownloadString("https://api.ipify.org");
+            return Ok(new { hostName, myIps , myIp, pubIp});
         }
     }
 }
