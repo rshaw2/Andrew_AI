@@ -211,7 +211,7 @@ namespace AndrewAI.Controllers
             var hostName = Dns.GetHostName();
             var myIps = Dns.GetHostEntry(hostName).AddressList;
             var myIp = Dns.GetHostEntry(hostName).AddressList[0].ToString();
-            return Ok(new { hostName, myIp});
+            return Ok(new { hostName, myIps , myIp});
         }
     }
 }
